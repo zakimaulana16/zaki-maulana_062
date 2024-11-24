@@ -1,0 +1,37 @@
+# nomer 1
+
+def luas_persegi_panjang(panjang, lebar):
+    return panjang * lebar
+
+def luaspersegipanjang():
+       panjang = float(input("masukkan nilai panjang: "))
+       lebar = float(input("masukkan nilai lebar: "))
+       luas = luas_persegi_panjang(panjang, lebar)
+       print(f"luas persegi panjang adalah : {luas}")
+luaspersegipanjang()
+
+
+# nomer 2
+
+stok_barang = 100
+def kurangi_stok(jumlah):
+    global stok_barang
+    if jumlah < stok_barang:
+        stok_barang -= jumlah
+        print(f"{jumlah} barang telah terjual. stok total : {stok_barang}")
+    else:
+        print(f"Stok tidak cukup! stok tersedia: {stok_barang} ")
+
+def hasil():
+    print("sistem manajemen stok barang toko")
+    while True:
+        jumlah =int(input("masukkan jumlah barang yang ingin di beli: "))
+        if jumlah < 0:
+            print("jumlah yang dimasukkan tidak valid. tolong masukkan jumlah ulang")
+        else:
+            kurangi_stok(jumlah)
+        lanjut = input("apakah anda ingin melanjutkan transaksi? (ya/tidak): ")
+        if lanjut != "ya":
+            print("Transaksi selesai. terima kasih! ")
+            break
+hasil()
